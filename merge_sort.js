@@ -23,16 +23,16 @@ function merge(array1, array2) {
 
     while (i < array1.length || j < array2.length) {
         if (i === array1.length) {  
-            sortedPoints.push(array2[j])
+            mergedArray.push(array2[j])
             j++
         } else if (j === array2.length) { 
-            sortedPoints.push(array1[i])
+            mergedArray.push(array1[i])
             i++
-        } else if (array1[i][sortByPosition] < array2[j][sortByPosition]) {
-            sortedPoints.push(array1[i])
+        } else if (array1[i] < array2[j]) {
+            mergedArray.push(array1[i])
             i++
         } else {
-            sortedPoints.push(array2[j])
+            mergedArray.push(array2[j])
             j++
         }
     }
